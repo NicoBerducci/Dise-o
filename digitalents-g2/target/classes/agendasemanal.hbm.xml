@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entidades.AgendaSemanal" table="agendasemanal">
+
+        <id name="OID" type="string">
+            <column name="OIDAgendaSemanal"/>
+            <generator class="uuid2"/>
+        </id>
+
+          <property name="añoAgendaSemanal" type="date">
+            <column name="añoAgendaSemanal"/>
+        </property>
+
+        <property name="fechaDesdeAgendaSemanal" type="date">
+            <column name="fechaDesdeAgendaSemanal"/>
+        </property>
+        
+        <property name="fechaHastaAgendaSemanal" type="date">
+            <column name="fechaHastaAgendaSemanal"/>
+        </property>
+        
+        <property name="nroSemanaAgendaSemanal" type="int">
+            <column name="nroSemanaAgendaSemanal"/>
+        </property>
+        
+        <bag name="consultorList" table="agendasemanalconsultor" cascade="none">
+        <key column="OIDAgendaSemanal" not-null="true"/>
+        <many-to-many class="entidades.Consultor" column="OIDConsultor"/>
+        </bag>
+        
+    </class>
+
+</hibernate-mapping>

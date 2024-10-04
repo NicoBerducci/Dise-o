@@ -1,0 +1,138 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:adm="http://github.com/adminfaces"
+                template="#{layoutMB.template}">
+    <ui:define name="metadata">
+        <ui:param name="title" value="Alta de trámites"/>
+        <style type="text/css">
+            body {
+                background-color: #0B2027;
+            }
+            .main-footer {
+                background: #3c8dbc;
+            }
+            #content {
+                background-color: #0B2027;
+                color: white;
+            }
+            .content {
+                background-color: #0B2027;
+            }
+            .content-header {
+                background-color: #0B2027;
+            }
+            .content-header>h1>small {
+                color: white;
+            }
+            .box.box-primary {
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-top,
+            body div.ui-treetable div.ui-paginator-top {
+                background-color: #0B2027;
+            }
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+            .columna {
+                background-color: #F6F1D1;
+            }
+            .ui-datatable-tablewrapper {
+                border: 100px;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-content,
+            body .ui-dialog .ui-dialog-content {
+                background-color: #0B2027;
+                color: white;
+            }
+            body button.btn-material.btn-primary {
+                color: white;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="description">
+        Alta de trámites
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form>
+            <p:focus context="@form"/>
+
+            <p:panel styleClass="box-primary card" style="background-color:#0B2027;">
+                <div class="ui-g ui-fluid" style="background-color:#0B2027;">
+
+                    <!--Datos del formulario-->
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad" style="background-color:#0B2027;"> 
+                        <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027; color: white">
+                            <p:outputLabel for="codigo" value="Código del TipoTramite:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="codigo" value="#{uiabmTipoTramite.codTipoTramite}" style="width: 150px;" disabled="#{!uiabmTipoTramite.insert}" >
+                            </p:inputText><p:message id="codigoTT" for="codigo"/>
+                        </div>
+                    </div> 
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                        <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027;color: white;">
+                            <p:outputLabel for="nombre" value="Nombre del TipoTramite:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11"> 
+                            <p:inputText id="nombre" value="#{uiabmTipoTramite.nombreTipoTramite}" />
+                        </div>
+                    </div>  
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                        <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027;color: white;">
+                            <p:outputLabel for="descTipoTramite" value="Descripcion TipoTramite:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11"> 
+                            <p:inputText id="descTipoTramite" value="#{uiabmTipoTramite.descTipoTramite}" />
+                        </div>
+                    </div> 
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                        <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027;color: white;">
+                            <p:outputLabel for="descWeb" value="Descripcion Web:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11"> 
+                            <p:inputText id="descWeb" value="#{uiabmTipoTramite.descWebTipoTramite}" />
+                        </div>
+                    </div> 
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                        <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027;color: white;">
+                            <p:outputLabel for="maxDiasPDoc" value="Max Dias:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11"> 
+                            <p:inputText id="maxDiasPDoc" value="#{uiabmTipoTramite.maxDiasParaDocumentacion}" />
+                        </div>
+                    </div>
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad" style="background-color:#0B2027;"> 
+                        <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027; color: white">
+                            <p:outputLabel for="categoriaCod" value="Categoría:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="categoriaCod" value="#{uiabmTipoTramite.categoriaCod}" style="width: 150px;" />
+                            <h:message for="categoriaCod" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad" style="background-color:#0B2027;"> 
+                        <div class="ui-sm-12 ui-g-4" style="background-color:#0B2027;">
+                            <!-- Botón para agregar tipo tramite -->
+                            <p:commandButton value="Agregar" action="#{uiabmTipoTramite.agregarTipoTramite()}" icon="fa fa-check" styleClass="btn-success" /> 
+                        </div>
+                    </div> 
+
+                </div>
+            </p:panel>
+
+        </h:form>
+    </ui:define>
+</ui:composition>

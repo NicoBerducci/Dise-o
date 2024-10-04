@@ -1,0 +1,137 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:adm="http://github.com/adminfaces"
+                template="#{layoutMB.template}">
+    <ui:define name="metadata">
+        <ui:param name="title" value="Tipos de tramites"/>
+        <style type="text/css">
+            body {
+                background-color: #0B2027;
+            }
+            .main-footer {
+                background: #3c8dbc;
+            }
+            #content {
+                background-color: #0B2027;
+                color: white;
+            }
+            .content {
+                background-color: #0B2027;
+            }
+            .content-header {
+                background-color: #0B2027;
+            }
+            .content-header>h1>small {
+                color: white;
+            }
+            .box.box-primary {
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-top,
+            body div.ui-treetable div.ui-paginator-top {
+                background-color: #0B2027;
+            }
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+            .columna {
+                background-color: #F6F1D1;
+            }
+            .ui-datatable-tablewrapper {
+                border: 100px;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-content,
+            body .ui-dialog .ui-dialog-content {
+                background-color: #0B2027;
+                color: white;
+            }
+            body button.btn-material.btn-primary {
+                color: white;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="description">
+        Tipos de trámites
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form>
+            <p:focus context="@form"/>
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <div id="main-buttons">
+                        <p:commandButton value="Nuevo" icon="fa fa-plus" action="#{uiabmTipoTramiteLista.irAgregarTipoTramite}" style="background-color: #2B784A; color: white;"/>
+                    </div>
+                </div>
+                <p:separator/>
+
+                <div class="ui-g ui-fluid">
+                    <div class="ui-g-12 ui-md-6">
+                        <p:outputPanel>
+                            <h:outputText value="Cod Tipo Tramite:"/>
+                            <p:spacer height="10"/>
+                            <p:inputText id="codTipoTramiteFiltro" style="width:150px;background-color:#F6F1D1;color:black"
+                                         value="#{uiabmTipoTramiteLista.codTipoTramiteFiltro}">
+                                <p:ajax event="keyup" listener="#{uiabmTipoTramiteLista.filtrar}" update="@form:grid1"/>
+                            </p:inputText>
+                        </p:outputPanel>
+                    </div>
+
+                    <div class="ui-g-12 ui-md-6">
+                        <p:outputPanel>
+                            <h:outputText value="Tipo de Trámite:"/>
+                            <p:spacer height="10"/>
+                            <p:inputText id="nombreTipoTramiteFiltro" style="width:150px;background-color:#F6F1D1;color:black"
+                                         value="#{uiabmTipoTramiteLista.nombreTipoTramiteFiltro}">
+                                <p:ajax event="keyup" listener="#{uiabmTipoTramiteLista.filtrar}" update="@form:grid1"/>
+                            </p:inputText>
+                        </p:outputPanel>
+                    </div>
+                </div>
+
+                <p:dataTable id="grid1" var="tipoTramite" value="#{uiabmTipoTramiteLista.listaFiltrada}" emptyMessage="No se encontraron trámites."
+                             style="background-color: #0B2027;color: black" paginator="true" rows="10" rowsPerPageTemplate="5,10,20"
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                    
+                    <p:column styleClass="columna" headerText="Cod Tramite">
+                        <h:outputText value="#{tipoTramite.codTipoTramite}"/>
+                    </p:column>
+                    <p:column styleClass="columna" headerText="Max Dias">
+                        <h:outputText value="#{tipoTramite.maxDiasParaDocumentacion}"/>
+                    </p:column>
+                    <p:column styleClass="columna" headerText="Descripción Web">
+                        <h:outputText value="#{tipoTramite.descWebTipoTramite}"/>
+                    </p:column>
+                    <p:column styleClass="columna" headerText="Descripción Tipo Trámite">
+                        <h:outputText value="#{tipoTramite.descTipoTramite}"/>
+                    </p:column>
+                    <p:column styleClass="columna" headerText="Fecha Baja">
+                        <h:outputText value="#{tipoTramite.fechaHoraBajaTipoTramite}">
+                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        </h:outputText>
+                    </p:column>
+                    <p:column styleClass="columna" headerText="Nombre Tipo Trámite">
+                        <h:outputText value="#{tipoTramite.nombreTipoTramite}"/>
+                    </p:column>
+                    <p:column styleClass="columna" headerText="Categoría">
+                        <h:outputText value="#{tipoTramite.categoria.nombreCategoria}"/>
+                    </p:column>
+                    
+                    <p:column styleClass="columna" headerText="Acciones">
+                        <p:commandButton value="Modificar" action="#{uiabmTipoTramiteLista.irModificarTipoTramite(tipoTramite.codTipoTramite)}" update="@form" disabled="#{tipoTramite.fechaHoraBajaTipoTramite != null}"/>
+                        <p:commandButton value="Dar de Baja" actionListener="#{uiabmTipoTramiteLista.darDeBajaTipoTramite(tipoTramite.codTipoTramite)}" disabled="#{tipoTramite.fechaHoraBajaTipoTramite != null}" update="@form"/>
+                    </p:column>
+                
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" styleClass="box-solid box-danger" style="background-color: #0B2027">
+                        <p:commandButton value="Si" type="button" styleClass="btn-material btn-primary ui-confirmdialog-yes" style="background-color: #0B2027"
+                                         icon="fa fa-check"/>
+                        <p:commandButton value="No" type="button" styleClass="btn-material btn-danger ui-confirmdialog-no" style="background-color: #0B2027"
+                                         icon="fa fa-close"/>
+                    </p:confirmDialog>
+                </p:dataTable>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
