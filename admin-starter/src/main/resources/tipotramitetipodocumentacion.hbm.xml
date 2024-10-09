@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entidades.TipoTramiteTipoDocumentacion" table="tipotramitetipodocumentacion">
+
+        <id name="OID" type="string">
+            <column name="OIDTipoTramiteTipoDocumentacion"/>
+            <generator class="uuid2"/>
+        </id>
+        
+        <property name="contadorTipoTramite" type="int">
+            <column name="contadorTipoTramite"/>
+        </property>
+
+        <property name="fechaDesdeTipoTramiteTipoDocumentacion" type="date">
+            <column name="fechaDesdeTipoTramiteTipoDocumentacion"/>
+        </property>
+        
+        <property name="fechaHastaTipoTramiteTipoDocumentacion" type="date">
+            <column name="fechaHastaTipoTramiteTipoDocumentacion"/>
+        </property>
+        
+        <many-to-one name="tipoDocumentacion" class="entidades.TipoDocumentacion" column="OIDTipoDocumentacion" not-null="true"/>
+              
+    </class>
+
+</hibernate-mapping>

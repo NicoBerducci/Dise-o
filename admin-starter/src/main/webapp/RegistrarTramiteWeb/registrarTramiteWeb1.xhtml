@@ -1,0 +1,94 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:adm="http://github.com/adminfaces"
+                template="#{layoutMB.template}">
+    
+    <ui:define name="metadata">
+        <ui:param name="title" value="Registro de Tramite"/> 
+             <style type="text/css">
+            body{
+                background-color: #0B2027;
+            }
+            .main-footer{
+                background: #3c8dbc;
+            }
+            #content{
+                background-color: #0B2027;
+                color: white;
+            }
+
+            .content{
+                background-color: #0B2027;
+
+            }
+            
+            .content-header{
+                background-color: #0B2027;
+
+            }
+            .content-header>h1>small{
+                color: white;                
+            }
+            .box.box-primary{
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-top, body div.ui-treetable div.ui-paginator-top{
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-bottom, body div.ui-treetable div.ui-paginator-bottom{
+                background-color: #0B2027;                
+            }
+            body div.ui-datatable div.ui-paginator span.ui-paginator-pages, body div.ui-treetable div.ui-paginator span.ui-paginator-pages{
+                background-color: #0B2027;
+            }
+            
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+            .columna{
+                background-color: #F6F1D1;
+            }
+            .ui-datatable-tablewrapper{
+                border: 100px;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-content, body .ui-dialog .ui-dialog-content {
+                background-color: #0B2027;
+                color: white;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-buttonpane, body .ui-dialog .ui-dialog-buttonpane{
+                background: #0B2027;
+            }
+            body button.btn-material.btn-primary, body button.ui-button.ui-widget.btn-material.btn-primary{
+                color:white;
+            }
+        </style>
+    </ui:define>
+    
+    <ui:define name="title"> 
+        <h:outputText value="Nuevo Trámite WEB" 
+                    style="color: white; background-color: #0B2027;"/>
+    </ui:define>  
+    
+    <ui:define name="body">
+        <h:panelGroup layout="block" style="text-align: left; margin: auto; width: 100%; max-width: 800px; padding: 20px; background-color: #0B2027;">
+            <h:outputText value="Seleccione la Categoría de Trámite que desea registrar" 
+                           style="color: white; font-size: 1.5em;" />
+        </h:panelGroup>
+        
+        <div style="border-top: 2px solid white; margin-bottom: 20px;"></div> <!-- Línea blanca -->
+
+        <p:dataTable value="#{uiregistrarTramiteWeb.buscarCategorias()}" var="categoria" style="width: 100%; text-align: center; 
+                     border: 1px solid #0B2027; border-collapse: collapse; background-color: #0B2027;">
+            <p:column style="border: 1px solid #0B2027; background-color: #0B2027;">
+                <p:commandButton type="button" style="width: 150px; height: 100px; text-align: center; background-color: #40798C; color: white;"
+                          value="#{categoria.nombrecat} - #{categoria.descWebcat}"
+                          onclick="location.href='registrarTramiteWeb2.xhtml?nombrecat=#{categoria.nombrecat}'; return false;">                         
+                </p:commandButton>
+            </p:column>
+        </p:dataTable>
+
+    </ui:define> 
+</ui:composition>
+
+

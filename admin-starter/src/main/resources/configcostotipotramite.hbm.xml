@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ 
+<hibernate-mapping> 
+ 
+    <class name="entidades.ConfigCostoTipoTramite" table="configcostotipotramite"> 
+ 
+        <id name="OID" type="string"> 
+            <column name="OIDConfigCostoTipoTramite"/> 
+            <generator class="uuid2"/> 
+        </id> 
+ 
+          <property name="fechaBajaConfigCostoTipoTramite" type="date"> 
+            <column name="fechaBajaConfigCostoTipoTramite"/> 
+        </property> 
+ 
+        <property name="fechaDesdeConfigCostoTipoTramite" type="date"> 
+            <column name="fechaDesdeConfigCostoTipoTramite"/> 
+        </property> 
+        
+        <property name="fechaHastaConfigCostoTipoTramite" type="date"> 
+            <column name="fechaHastaConfigCostoTipoTramite"/> 
+        </property> 
+        
+        <property name="nroConfigCostoTipoTramite" type="int"> 
+            <column name="nroConfigCostoTipoTramite"/> 
+        </property> 
+        
+        <bag name="costoTipoTramiteList" table="costotipotramite" cascade="none" inverse="false">
+        <key column="OIDConfigCostoTipoTramite" not-null="true"/>
+        <one-to-many class="entidades.CostoTipoTramite"/>
+        </bag>
+ 
+    </class> 
+ 
+</hibernate-mapping>

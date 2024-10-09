@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entidades.CostoTipoTramite" table="costotipotramite">
+
+        <id name="OID" type="string">
+            <column name="OIDCostoTipoTramite"/>
+            <generator class="uuid2"/>
+        </id>
+
+          <property name="importeCostoTipoTramite" type="int">
+            <column name="importeCostoTipoTramite"/>
+        </property>
+        
+        <many-to-one name="tipoTramite" class="entidades.TipoTramite" column="OIDTipoTramite" not-null="true"/>        
+
+    </class>
+
+</hibernate-mapping>

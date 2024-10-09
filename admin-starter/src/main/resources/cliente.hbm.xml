@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entidades.Cliente" table="cliente">
+
+        <id name="OID" type="string">
+            <column name="OIDCliente"/>
+            <generator class="uuid2"/>
+        </id>
+
+        <property name="nroCliente" type="int">
+            <column name="nroCliente"/>
+        </property>
+
+        <property name="nombreCliente" type="string">
+            <column name="nombreCliente"/>
+        </property>
+
+        <property name="apellidoCliente" type="string">
+            <column name="apellidoCliente"/>
+        </property>
+
+        <property name="DNICliente" type="int">
+            <column name="DNICliente"/>
+        </property>
+
+        <property name="emailCliente" type="string">
+            <column name="emailCliente"/>
+        </property>
+
+        <property name="telCliente" type="int">
+            <column name="telCliente"/>
+        </property>
+
+        <property name="observaciones" type="string">
+            <column name="observaciones"/>
+        </property>
+
+        <property name="fechaHoraBajaCliente" column="fecha_baja" type="timestamp"/>
+
+        <many-to-one name="usuario" class="entidades.Usuario" column="OIDUsuario" not-null="true"/>
+        
+    </class>
+
+</hibernate-mapping>

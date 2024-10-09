@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entidades.TipoTramite" table="tipotramite">
+
+        <id name="OID" type="string">
+            <column name="OIDTipoTramite"/>
+            <generator class="uuid2"/>
+        </id>
+
+          <property name="codTipoTramite" type="int">
+            <column name="codTipoTramite"/>
+        </property>
+
+        <property name="descTipoTramite" type="string">
+            <column name="descTipoTramite"/>
+        </property>
+        
+        <property name="descWebTipoTramite" type="string">
+            <column name="descWebTipoTramite"/>
+        </property>
+        
+        <property name="fechaHoraBajaTipoTramite" type="timestamp">
+            <column name="fechaHoraBajaTipoTramite"/>
+        </property>
+        
+        <property name="maxDiasParaDocumentacion" type="int">
+            <column name="maxDiasParaDocumentacion"/>
+        </property>
+        
+        <property name="nombreTipoTramite" type="string">
+            <column name="nombreTipoTramite"/>
+        </property>
+        
+        <many-to-one name="categoria" class="entidades.Categoria" column="OIDCategoria" not-null="true"/>
+        
+        <bag name="tipoDocumentacionList" table="tipotramitedocumentacion" cascade="none">
+        <key column="OIDTipoTramite" not-null="true"/>
+        <many-to-many class="entidades.TipoDocumentacion" column="OIDTipoDocumentacion"/>
+        </bag>
+        
+        <bag name="tipoTramiteTipoDocumentacionList" table="tipotramitetipodocumentacion" cascade="none" inverse="false">
+        <key column="OIDTipoTramite" not-null="true"/>
+        <one-to-many class="entidades.TipoTramiteTipoDocumentacion"/>
+        </bag>
+    
+    </class>
+
+</hibernate-mapping>
