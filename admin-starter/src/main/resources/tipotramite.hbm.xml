@@ -41,7 +41,7 @@
         <many-to-many class="entidades.TipoDocumentacion" column="OIDTipoDocumentacion"/>
         </bag>
         
-        <bag name="tipoTramiteTipoDocumentacionList" table="tipotramitetipodocumentacion" cascade="none" inverse="false">
+        <bag name="tipoTramiteTipoDocumentacionList" table="tipotramitetipodocumentacion" cascade="save-update" inverse="false">
         <key column="OIDTipoTramite" not-null="true"/>
         <one-to-many class="entidades.TipoTramiteTipoDocumentacion"/>
         </bag>

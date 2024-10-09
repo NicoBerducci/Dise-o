@@ -49,12 +49,12 @@
         <many-to-one name="estadoTramite" class="entidades.EstadoTramite" column="OIDEstadoTramite" not-null="true"/>
         
         
-        <bag name="tramiteEstadoList" table="tramiteestado" cascade="none" inverse="false">
+        <bag name="tramiteEstadoList" table="tramiteestado" cascade="save-update" inverse="false">
         <key column="OIDTramite" not-null="false"/>
         <one-to-many class="entidades.TramiteEstado"/>
         </bag>
         
-        <bag name="tramiteDocumentacionList" table="tramitedocumentacion" cascade="none" inverse="false">
+        <bag name="tramiteDocumentacionList" table="tramitedocumentacion" cascade="save-update" inverse="false">
         <key column="OIDTramite" not-null="true"/>
         <one-to-many class="entidades.TramiteDocumentacion"/>
         </bag>

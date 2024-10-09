@@ -26,7 +26,7 @@
             <column name="nroConfigCostoTipoTramite"/> 
         </property> 
         
-        <bag name="costoTipoTramiteList" table="costotipotramite" cascade="none" inverse="false">
+        <bag name="costoTipoTramiteList" table="costotipotramite" cascade="save-update" inverse="false">
         <key column="OIDConfigCostoTipoTramite" not-null="true"/>
         <one-to-many class="entidades.CostoTipoTramite"/>
         </bag>

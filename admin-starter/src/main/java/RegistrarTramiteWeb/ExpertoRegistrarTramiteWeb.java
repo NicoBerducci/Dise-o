@@ -135,7 +135,7 @@ public class ExpertoRegistrarTramiteWeb {
         List<DTOCriterio> lCriterio=new ArrayList<DTOCriterio>();
         DTOCriterio unCriterio=new DTOCriterio();
         unCriterio.setAtributo("fechaBajaConfigCostoTipoTramite");
-        unCriterio.setOperacion("!=");
+        unCriterio.setOperacion("=");
         unCriterio.setValor(null);
         lCriterio.add(unCriterio);
             

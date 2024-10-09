@@ -30,7 +30,7 @@
             <column name="nroVersion"/>
         </property>
         
-        <bag name="tipoTramiteEstadoTramiteList" table="tipotramiteestadotramite" cascade="none" inverse="false">
+        <bag name="tipoTramiteEstadoTramiteList" table="tipotramiteestadotramite" cascade="save-update" inverse="false">
         <key column="OIDConfigTipoTramiteEstadoTramite" not-null="true"/>
         <one-to-many class="entidades.TipoTramiteEstadoTramite"/>
         </bag>
