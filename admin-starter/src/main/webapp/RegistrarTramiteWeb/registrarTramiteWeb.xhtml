@@ -1,0 +1,314 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:adm="http://github.com/adminfaces"
+                template="#{layoutMB.template}"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <ui:define name="metadata">
+        <ui:param name="title" value="Registro de Tramite"/> 
+             <style type="text/css">
+            body{
+                background-color: #0B2027;
+            }
+            .main-footer{
+                background: #3c8dbc;
+            }
+            #content{
+                background-color: #0B2027;
+                color: white;
+            }
+
+            .content{
+                background-color: #0B2027;
+
+            }
+           
+            .content-header{
+                background-color: #0B2027;
+
+            }
+            .content-header>h1>small{
+                color: white;                
+            }
+             .box.box-primary{
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-top, body div.ui-treetable div.ui-paginator-top{
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-bottom, body div.ui-treetable div.ui-paginator-bottom{
+                background-color: #0B2027;                
+            }
+            body div.ui-datatable div.ui-paginator span.ui-paginator-pages, body div.ui-treetable div.ui-paginator span.ui-paginator-pages{
+                background-color: #0B2027;
+            }
+            
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+            .columna{
+                background-color: #F6F1D1;
+            }
+            .ui-datatable-tablewrapper{
+                border: 100px;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-content, body .ui-dialog .ui-dialog-content {
+                background-color: #0B2027;
+                color: white;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-buttonpane, body .ui-dialog .ui-dialog-buttonpane{
+                background: #0B2027;
+            }
+            body button.btn-material.btn-primary, body button.ui-button.ui-widget.btn-material.btn-primary{
+                color:white;
+            }
+            .ui-widget-header{
+                color:white;
+            }
+            div.ui-panel .ui-panel-title{
+                color:white;
+            }
+            .ui-panel.ui-widget .ui-panel-titlebar.ui-corner-all{
+                background: #0B2027;
+                color: white;
+            }
+            .ui-grid .ui-grid-row{
+                background: #0B2027;
+            }
+            .ui-panel-title{
+                color: white;
+            }
+            .data-cell {
+                border: 1px solid white; 
+                padding: 10px;
+                margin: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .data-display {
+                background-color: white; 
+                color: black; 
+                border: 1px solid #ccc;
+                padding: 5px;
+                width: 60%;
+                align-content: initial;
+            }
+            .ui-steps .ui-steps-item {
+                width: 24%;
+            }
+
+            .ui-state-highlight {
+                text-shadow: none !important;
+            }
+
+            .ui-steps.custom {
+                margin-bottom: 30px;
+            }
+
+            .ui-steps.custom .ui-steps-item .ui-menuitem-link {
+                height: 10px;
+                padding: 0 1em;
+            }
+
+            .ui-steps.custom .ui-steps-item .ui-steps-number {
+                background-color: #0081c2;
+                color: #FFFFFF;
+                display: inline-block;
+                width: 30px;
+                border-radius: 10px;
+                margin-top: -10px;
+                margin-bottom: 10px;
+            }
+
+            .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-steps-title {
+                color: #555;
+            }
+            .ui-panel .ui-panel-title{
+                color:white;
+            }
+        </style>
+        
+        <script>
+            let selectedCategoria = null; // Almacena la categoría seleccionada
+            
+            function highlightButton(selectedButton, categoria) {
+                // Selecciona todos los botones dentro del panel
+                const buttons = document.querySelectorAll('button[style*="background-color: #40798C"]');
+
+                // Resaltar el botón seleccionado
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = '#40798C'; // Color original
+                });
+
+                // Resaltar el botón que se acaba de seleccionar
+                selectedButton.style.backgroundColor = '#355f6b'; 
+                selectedCategoria = categoria; // Marcar la nueva categoría como seleccionada
+
+                // Guardar el valor de la categoría seleccionada en la clase de UI
+                PrimeFaces.ab({
+                    source: selectedButton,
+                    update: '@form',
+                    oncomplete: function() {
+                    },
+                    params: { selectedCategoria: categoria }
+                });
+            }
+        </script>
+        <script>
+            let selectedTipoTramite = null; 
+            
+            function highlightButtonStepTwo(selectedButton, tipoTramite) {
+                // Selecciona todos los botones dentro del panel
+                const buttons = document.querySelectorAll('button[style*="background-color: #40798C"]');
+
+                // Resaltar el botón seleccionado
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = '#40798C'; // Color original
+                });
+
+                // Resaltar el botón que se acaba de seleccionar
+                selectedButton.style.backgroundColor = '#355f6b'; 
+                selectedTipoTramite = tipoTramite; 
+
+                // Guardar el valor del tipo tramite seleccionado en la clase de UI
+                PrimeFaces.ab({
+                    source: selectedButton,
+                    update: '@form',
+                    oncomplete: function() {
+                    },
+                    params: { selectedTipoTramite: tipoTramite }
+                });
+            }
+        </script>
+        
+ 
+       
+    </ui:define>
+    
+    <ui:define name="title"> 
+        <h:outputText value="Nuevo Trámite WEB" 
+                    style="color: white; background-color: #0B2027;"/>
+    </ui:define>  
+    
+    <ui:define name="body">
+               
+    <adm:breadcrumb title="Wizard"/>
+
+    <p:panel styleClass="card box-info" style="background-color: #0B2027;">
+        <h:form>
+            <p:wizard flowListener="#{userWizardMB.onFlowProcess}">
+                <p:tab id="categoria" title="Categoría">
+                    <p:panel  style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                        <h3 style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                            Seleccione la Categoría de Trámite que desea registrar</h3>
+                        <p:messages closable="true"/>
+                        <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4"
+                                     layout="grid" styleClass="ui-fluid" style="width: 100%;">
+                            <c:forEach items="#{uiregistrarTramiteWeb.buscarCategorias()}" var="categoria">
+                                <p:commandButton type="button" 
+                                    style="width: 150px; height: 100px; text-align: center; background-color: #40798C; color: white;"
+                                    value="#{categoria.nombrecat} - #{categoria.descWebcat}"
+                                    action="#{uiregistrarTramiteWeb.setNombreCategoriaSeleccionada(categoria.nombrecat)}"
+                                    update="@form"
+                                    onclick="highlightButton(this, '#{categoria.nombrecat}');"/>
+                            </c:forEach>
+                        </p:panelGrid>
+                    </p:panel>
+                </p:tab>
+
+                    <p:tab id="tipotramite" title="Tipo Trámite">
+                         <h2 style="text-align: left; color: white; background-color: #0B2027">Categoría seleccionada: #{uiregistrarTramiteWeb.getNombreCategoriaSeleccionada()}</h2>
+                         <p:panel  style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                        <h3 style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                            Seleccione el Tipo de Trámite que desea registrar</h3>
+                            <p:messages closable="true"/>
+                            <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4"
+                                         layout="grid" styleClass="ui-fluid" style="width: 100%;">
+                                <c:forEach items="#{uiregistrarTramiteWeb.buscarTipoTramites(uiregistrarTramiteWeb.getNombreCategoriaSeleccionada())}" var="tipoTramite">
+                                    <p:commandButton type="button"
+                                        style="width: 150px; height: 100px; text-align: center; background-color: #40798C; color: white;"
+                                        value="#{tipoTramite.nombrett} - #{tipoTramite.descWebtt}"
+                                        update="@form"
+                                        onclick="console.log('Tipo de Trámite seleccionado:', '#{tipoTramite.nombrett}'); highlightButtonStepTwo(this, '#{tipoTramite.nombrett}');"/>
+                                    <h:inputHidden id="nombrett" value="#{uiregistrarTramiteWeb.setNombreTipoTramiteSeleccionado(tipoTramite.nombrett)}" />
+                                    <h:inputHidden id="nombreDoc" value="#{uiregistrarTramiteWeb.obtenerListaDocumentacionTT()}"/>
+                                </c:forEach>
+                            </p:panelGrid>
+                        </p:panel>
+                    </p:tab>
+                    
+
+                    <p:tab id="confirmacion" title="Confirmación">
+                        <h2 style="text-align: left; color: white; background-color: #0B2027">Tipo Tramite seleccionado: #{uiregistrarTramiteWeb.getNombreTipoTramiteSeleccionado()}</h2>
+                        <p:panel  style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                        <h3 style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                            ¿Desea registrar su trámite con la siguiente información seleccionada?</h3>
+                            <p:messages closable="true"/>
+                            <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4"
+                                         layout="grid" styleClass="ui-fluid">
+                                <h:outputText value="DNI:" style="color: white"/>
+                                <div id="dato1" class="data-display"> #{uiregistrarTramiteWeb.getDNICliente(logonMB.currentUser)} </div>
+                                <h:outputText value="Nombre: " style="color: white"/>
+                                <div id="dato2" class="data-display"> #{uiregistrarTramiteWeb.getNombreApellidoCLiente(logonMB.currentUser)} </div>
+                                <h:outputText value="Categoría: " style="color: white"/>
+                                <div id="dato3" class="data-display"> #{uiregistrarTramiteWeb.getNombreCategoriaSeleccionada()}</div>
+                                <h:outputText value="Tipo Trámite: " style="color: white"/>
+                                <div id="dato4" class="data-display"> #{uiregistrarTramiteWeb.getNombreTipoTramiteSeleccionado()}</div>
+                                <h:outputText value="Precio: " style="color: white"/>
+                                <div id="dato5" class="data-display"> $ #{uiregistrarTramiteWeb.buscarPrecioTramite()}</div>
+                                <h:outputText value="Número de Consultor: " style="color: white"/>
+                                <div id="dato6" class="data-display"> #{uiregistrarTramiteWeb.determinarConsultorATramite()} </div>
+                                <h:outputText value="Límite de entrega documentación: " style="color: white"/>
+                                <div id="dato7" class="data-display"> #{uiregistrarTramiteWeb.setFechaHoraLimiteDeEntregaDoc()} </div>                            
+                                <h:outputText value="Documentación: " style="color: white"/>
+                                <div id="dato8" class="data-display"> #{uiregistrarTramiteWeb.obtenerDocumentacionComoCadena()}</div>
+                            </p:panelGrid>
+                        </p:panel>
+                    </p:tab>
+
+                    <p:tab id="exito" title="Número de Trámite">
+                        <p:panel  style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                        <h3 style="color: white; background-color:#0B2027; border-left: black; border-right: black; border-bottom: black;">
+                            ¡Su trámite fue registrado con éxito!</h3>
+                            <div class="ui-g ui-fluid">
+                                <div class="ui-g-12">
+
+                                    <div class="ui-g-4">
+                                        <div class="ui-g-12">
+                                            <p:outputLabel value="Número de Trámite: " style="color: white"/>
+                                        </div>
+                                        <div class="ui-g-12">
+                                            <div id="dato1" class="data-display"> #{uiregistrarTramiteWeb.generarNumeroTramiteNuevo()} </div>
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h:inputHidden id="tramiteExitoso" value="#{uiregistrarTramiteWeb.crearTramite()}"/>
+                            <p:commandButton value="Menú" onclick="location.href='/admin/index.xhtml'" styleClass="btn-teal" icon="fa fa-check"
+                                             process="@this"/>
+                        </p:panel>
+                    </p:tab>
+                </p:wizard>
+
+            </h:form>
+        </p:panel>
+    </ui:define>
+
+    <ui:define name="code">
+        <p:tabView>
+            <p:tab title="registrarTramiteWeb.xhtml">
+                <pre>
+                    <code class="language-html">
+                        <h:outputText value="#{sourceCodeMB.getPageSource()}" escape="true"/>
+                    </code>
+                </pre>
+            </p:tab>
+        </p:tabView>
+    </ui:define>
+    
+</ui:composition>
+
+
