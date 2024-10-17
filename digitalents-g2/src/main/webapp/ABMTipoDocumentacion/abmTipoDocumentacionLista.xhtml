@@ -1,0 +1,201 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:adm="http://github.com/adminfaces"
+                template="#{layoutMB.template}">
+    <ui:define name="metadata">
+        <ui:param name="title" value="Trabajar con TipoDocumentacion"/> <!-- Automatic create breadCrumb and page title when param 'title' is provided. --> 
+        
+        <style type="text/css">
+             body{
+                background-color: #0B2027;
+            }
+            .main-footer{
+                background: #3c8dbc;
+            }
+            #content{
+                background-color: #0B2027;
+                color: white;
+            }
+
+            .content{
+                background-color: #0B2027;
+
+            }
+            
+            .content-header{
+                background-color: #0B2027;
+
+            }
+            .content-header>h1>small{
+                color: white;                
+            }
+            .box.box-primary{
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-top, body div.ui-treetable div.ui-paginator-top{
+                background-color: #0B2027;
+            }
+            body div.ui-datatable div.ui-paginator-bottom, body div.ui-treetable div.ui-paginator-bottom{
+                background-color: #0B2027;                
+            }
+            body div.ui-datatable div.ui-paginator span.ui-paginator-pages, body div.ui-treetable div.ui-paginator span.ui-paginator-pages{
+                background-color: #0B2027;
+            }
+            
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+            .columna{
+                background-color: #F6F1D1;
+            }
+            .ui-datatable-tablewrapper{
+                border: 100px;
+            }
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+             
+            .fondoCat {
+        background-color: #0B2027;
+        color: white;
+        padding: 20px;
+        
+        .ui-g-12 .ui-md-6 .ui-fluid .ui-g .ui-g ui-fluid{
+             background-color: #0B2027;
+        color: white;
+        }
+        .col-sm-12{
+             background-color: #2B784A;
+        }
+            
+            .content-header{
+             background-color: #0B2027;}
+        
+        .content-wrapper #content .main-footer{
+             background-color: #0B2027;
+        }
+            body .ui-dialog.ui-widget-content .ui-dialog-content, body .ui-dialog .ui-dialog-content {
+                background-color: #0B2027;
+                color: white;
+            }
+            body .ui-dialog.ui-widget-content .ui-dialog-buttonpane, body .ui-dialog .ui-dialog-buttonpane{
+                background: #0B2027;
+            }
+            body button.btn-material.btn-primary, body button.ui-button.ui-widget.btn-material.btn-primary{
+                color:white;
+            }
+    }
+        </style>
+    </ui:define>
+
+   
+    <ui:define name="description" >
+        <div>
+            Trabajar con Tipo Documentación
+        </div>
+        
+    </ui:define>
+
+    <ui:define name="body">
+    <h:form>
+        <p:focus context="@form"/>
+            <div class="box box-primary" style="background-color:#0B2027;">
+                        
+                     <div class="box-header with-border" style="background-color:#0B2027;">
+                         <div id="main-buttons">
+
+                            <p:commandButton value="Agregar"  icon="fa fa-plus" action="#{uiabmTipoDocumentacionLista.irAgregarTipoDocumentacion()}"    styleClass="btn-success"/>
+                               </div>
+                      </div>
+        <!-- Tabla para mostrar la lista de artículos -->
+         <p:separator/>
+
+                <div class="ui-g ui-fluid" style="background-color:#0B2027;"> 
+                   <div class="ui-g-12 ui-md-6" style="background-color:#0B2027;">
+                    <p:outputPanel style="background-color:#0B2027;color:white">
+                        <h:outputText value="Código:"/>
+                        <p:spacer height="10" style="background-color:#0B2027;"/>
+                        <p:inputText
+                            id="codFilter" 
+                            style="width:150px;background-color:#F6F1D1;color:black"
+                                     placeholder="" value="#{uiabmTipoDocumentacionLista.codigoFiltro}" onfocus="Javascript:this.focus();this.select();">
+                                        <p:ajax event="keyup" 
+                                            listener="#{uiabmTipoDocumentacionLista.filtrar()}" 
+                                            update="@form:grid1"
+                                            />
+                                     
+                                    </p:inputText>
+
+                    </p:outputPanel> </div>
+
+                   <div class="ui-g-12 ui-md-6">
+                   <p:outputPanel style="background-color:#0B2027;color:white">
+                        <h:outputText value="Nombre:"/>
+                        <p:spacer height="10"/>
+                        <p:inputText id="nomFilter"  style="width:150px;background-color:#F6F1D1;color:black"
+                                     placeholder="" value="#{uiabmTipoDocumentacionLista.nombreFiltro}">
+                                        <p:ajax event="keyup" 
+                                            listener="#{uiabmTipoDocumentacionLista.filtrar()}" 
+                                            update="@form:grid1"
+                                        />
+                                     
+                        </p:inputText>
+                    </p:outputPanel> 
+                   </div>
+                   </div>
+            <p:spacer height="5" style="background-color:#0B2027;"/>
+            <p:dataTable id="grid1"  widgetVar="tipoDocumentacionTable" value="#{uiabmTipoDocumentacionLista.buscarTipoDocumentacion()}" var="tipoDocumentacion" >
+
+            <p:column style="background-color:#F6F1D1;color:black">
+                <f:facet name="header">Código</f:facet>
+                #{tipoDocumentacion.codTipoDocumentacion}
+            </p:column>
+
+            <p:column style="background-color:#F6F1D1;color:black">
+                <f:facet name="header">Nombre</f:facet>
+                #{tipoDocumentacion.nombreTipoDocumentacion}
+            </p:column>
+
+            <p:column style="background-color:#F6F1D1;color:black">
+                <f:facet name="header">Descripcion</f:facet>
+                #{tipoDocumentacion.descTipoDocumentacion}
+            </p:column>
+                <!-- comment
+            <p:column style="background-color:#F6F1D1;color:black">
+                <f:facet name="header">DescWeb</f:facet>
+                #{categoria.descWebCategoria}
+            </p:column> -->
+
+            <p:column style="background-color:#F6F1D1;color:black">
+                <f:facet name="header">Fecha Baja</f:facet>
+                #{tipoDocumentacion.fechaHoraBajaTD}
+            </p:column>
+
+            <p:column style="background-color:#F6F1D1;color:black">
+                <f:facet name="header">Acciones</f:facet>
+                <p:commandButton value="Modificar" styleClass="btn-warning" action="#{uiabmTipoDocumentacionLista.irModificarTipoDocumentacion(tipoDocumentacion.codTipoDocumentacion)}" disabled="#{tipoDocumentacion.fechaHoraBajaTD != null}">
+                    <f:ajax render="@form"/>
+                </p:commandButton>
+                <p:spacer width="5" />
+                <p:commandButton style="color: white;" value="Baja" styleClass="btn-danger" update="@form" actionListener="#{uiabmTipoDocumentacionLista.darDeBajaTipoDocumentacion(tipoDocumentacion.codTipoDocumentacion)}" disabled="#{tipoDocumentacion.fechaHoraBajaTD != null}">
+                   
+                    <p:confirm header="Anulación de #{tipoDocumentacion.codTipoDocumentacion} #{tipoDocumentacion.nombreTipoDocumentacion}" message="¿Está seguro?" icon="ui-icon-alert"/>
+                    
+                </p:commandButton>
+                
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" styleClass="box-solid box-danger" style="background-color: #0B2027">
+                        <p:commandButton value="Si" type="button" styleClass="btn-material btn-primary ui-confirmdialog-yes" style="background-color: #0B2027"
+                                         icon="fa fa-check"/>
+                        <p:commandButton value="No" type="button" styleClass="btn-material btn-danger ui-confirmdialog-no" style="background-color: #0B2027"
+                                         icon="fa fa-close"/>
+                    </p:confirmDialog>
+            </p:column>
+
+        </p:dataTable>
+            </div>
+
+   </h:form>
+
+ </ui:define>
+    </ui:composition>
