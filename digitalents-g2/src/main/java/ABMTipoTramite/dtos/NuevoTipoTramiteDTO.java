@@ -2,8 +2,6 @@ package ABMTipoTramite.dtos;
 
 import entidades.Categoria;
 import entidades.TipoDocumentacion;
-import entidades.TipoTramiteTipoDocumentacion;
-import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -80,5 +78,4 @@ public class NuevoTipoTramiteDTO {
     public void setTipoTramiteTipoDocumentacionList(List<Integer> tipoTramiteTipoDocumentacionList) {
         this.tipoTramiteTipoDocumentacionList = tipoTramiteTipoDocumentacionList;
     }
-    
 }

@@ -1,7 +1,9 @@
 package ABMTipoTramite.beans;
 
 import entidades.Categoria;
+import entidades.TipoDocumentacion;
 import java.sql.Timestamp;
+import java.util.List;
 
 
 public class TipoTramiteUI {
@@ -12,6 +14,7 @@ public class TipoTramiteUI {
     private int maxDiasParaDocumentacion;
     private String nombreTipoTramite;
     private Categoria categoria;
+    private List<TipoDocumentacion> tipoDocumentacionList; // Para agregar un TipoDoc al TipoTramite
 
     public int getCodTipoTramite() {
         return codTipoTramite;
@@ -67,5 +70,13 @@ public class TipoTramiteUI {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public List<TipoDocumentacion> getTipoDocumentacionList() {
+        return tipoDocumentacionList;
+    }
+
+    public void setTipoDocumentacionList(List<TipoDocumentacion> tipoDocumentacionList) {
+        this.tipoDocumentacionList = tipoDocumentacionList;
     }
 }

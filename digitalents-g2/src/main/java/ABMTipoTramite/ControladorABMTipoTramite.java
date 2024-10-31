@@ -29,5 +29,4 @@ public class ControladorABMTipoTramite {
     public void darDeBajaTipoTramite(int codTipoTramite) throws TipoTramiteException {
         expertoABMTipoTramite.darDeBajaTipoTramite(codTipoTramite);
     }
-    
 }

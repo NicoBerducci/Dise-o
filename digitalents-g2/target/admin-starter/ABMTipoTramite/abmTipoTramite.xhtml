@@ -64,16 +64,15 @@
                 <div class="ui-g ui-fluid" style="background-color:#0B2027;">
 
                     <!--Datos del formulario-->
-
                     <div class="ui-sm-12 ui-g-6 ui-g-nopad" style="background-color:#0B2027;"> 
                         <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027; color: white">
                             <p:outputLabel for="codigo" value="Código del TipoTramite:" />
                         </div>
                         <div class="ui-sm-12 ui-g-11">
-                            <p:inputText id="codigo" value="#{uiabmTipoTramite.codTipoTramite}" style="width: 150px;" disabled="#{!uiabmTipoTramite.insert}" >
-                            </p:inputText><p:message id="codigoTT" for="codigo"/>
+                            <p:inputText id="codigo" value="#{uiabmTipoTramite.codTipoTramite}" style="width: 150px;" disabled="#{!uiabmTipoTramite.insert}"/>
+                            <p:message id="codigoTT" for="codigo"/>
                         </div>
-                    </div> 
+                    </div>
 
                     <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
                         <div class="ui-sm-12 ui-g-11" style="background-color:#0B2027;color: white;">
@@ -116,11 +115,30 @@
                             <p:outputLabel for="categoriaCod" value="Categoría:" />
                         </div>
                         <div class="ui-sm-12 ui-g-11">
-                            <p:inputText id="categoriaCod" value="#{uiabmTipoTramite.categoria.codCategoria}" style="width: 150px;">
+                            <p:inputText id="categoriaCod" value="#{uiabmTipoTramite.categoriaCod}" style="width: 150px;">
                             </p:inputText><p:message id="categoria" for="categoriaCod"/>
                         </div>
                     </div>
+                    
+                    <!--Tabla de seleccion-->
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                        <div class="ui-sm-12 ui-g-12" style="background-color:#0B2027;color: white;">
+                            <p:outputLabel value="Seleccionar Tipo de Documentación:" />
+                        </div>
 
+                        <div class="ui-sm-12 ui-g-11"> 
+                            <!-- PrimeFaces DataTable with checkboxes for multiple selection -->
+                            <p:dataTable value="#{uiabmTipoTramite.tipoDocumentacionList}" var="tipoDoc" 
+                                         selection="#{uiabmTipoTramite.selectedTipoDocumentacion}" 
+                                         rowKey="#{tipoDoc.codTipoDocumentacion}">
+                                <p:column selectionMode="multiple" style="width:40px"/>
+
+                                <p:column headerText="Nombre de Tipo Documentación">
+                                    <h:outputText value="#{tipoDoc.nombreTipoDocumentacion}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </div>
+                    </div>
 
 
                     <div class="ui-sm-12 ui-g-6 ui-g-nopad" style="background-color:#0B2027;"> 

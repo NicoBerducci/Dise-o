@@ -94,7 +94,7 @@
                 <p:dataTable id="grid1" var="tipoTramite" value="#{uiabmTipoTramiteLista.listaFiltrada}" emptyMessage="No se encontraron trámites."
                              style="background-color: #0B2027;color: black" paginator="true" rows="10" rowsPerPageTemplate="5,10,20"
                              paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
-                    
+
                     <p:column styleClass="columna" headerText="Cod Tramite">
                         <h:outputText value="#{tipoTramite.codTipoTramite}"/>
                     </p:column>
@@ -118,12 +118,12 @@
                     <p:column styleClass="columna" headerText="Categoría">
                         <h:outputText value="#{tipoTramite.categoria.nombreCategoria}"/>
                     </p:column>
-                    
+
                     <p:column styleClass="columna" headerText="Acciones">
                         <p:commandButton value="Modificar" action="#{uiabmTipoTramiteLista.irModificarTipoTramite(tipoTramite.codTipoTramite)}" update="@form" disabled="#{tipoTramite.fechaHoraBajaTipoTramite != null}"/>
                         <p:commandButton value="Dar de Baja" actionListener="#{uiabmTipoTramiteLista.darDeBajaTipoTramite(tipoTramite.codTipoTramite)}" disabled="#{tipoTramite.fechaHoraBajaTipoTramite != null}" update="@form"/>
                     </p:column>
-                
+
                     <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" styleClass="box-solid box-danger" style="background-color: #0B2027">
                         <p:commandButton value="Si" type="button" styleClass="btn-material btn-primary ui-confirmdialog-yes" style="background-color: #0B2027"
                                          icon="fa fa-check"/>

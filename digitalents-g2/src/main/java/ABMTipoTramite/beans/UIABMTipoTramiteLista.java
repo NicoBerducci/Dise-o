@@ -3,6 +3,7 @@ package ABMTipoTramite.beans;
 import ABMTipoTramite.ControladorABMTipoTramite;
 import ABMTipoTramite.dtos.TipoTramiteDTO;
 import ABMTipoTramite.exceptions.TipoTramiteException;
+import entidades.TipoDocumentacion;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.omnifaces.util.Messages;
 import utils.BeansUtils;
-
 
 @Named("uiabmTipoTramiteLista")
 @ViewScoped
@@ -20,6 +20,7 @@ public class UIABMTipoTramiteLista implements Serializable {
     private int codTipoTramiteFiltro = 0;
     private String nombreTipoTramiteFiltro = "";
     private List<TipoTramiteUI> listaFiltrada = new ArrayList<>(); // Variable para almacenar la lista filtrada
+    private List<TipoDocumentacion> tipoDocumentacionList;
 
     public ControladorABMTipoTramite getControladorABMTipoTramite() {
         return controladorABMTipoTramite;
@@ -56,6 +57,14 @@ public class UIABMTipoTramiteLista implements Serializable {
         this.listaFiltrada = listaFiltrada;
     }
 
+    public List<TipoDocumentacion> getTipoDocumentacionList() {
+        return tipoDocumentacionList;
+    }
+
+    public void setTipoDocumentacionList(List<TipoDocumentacion> tipoDocumentacionList) {
+        this.tipoDocumentacionList = tipoDocumentacionList;
+    }
+
     // Método para filtrar la lista
     public void filtrar() {
         listaFiltrada = buscarTipoTramite(); // Actualiza la lista filtrada
@@ -74,6 +83,8 @@ public class UIABMTipoTramiteLista implements Serializable {
             tipoTramiteUI.setFechaHoraBajaTipoTramite(tipoTramiteDTO.getFechaHoraBajaTipoTramite());
             tipoTramiteUI.setMaxDiasParaDocumentacion(tipoTramiteDTO.getMaxDiasParaDocumentacion());
             tipoTramiteUI.setNombreTipoTramite(tipoTramiteDTO.getNombreTipoTramite());
+            tipoTramiteUI.setCategoria(tipoTramiteDTO.getCategoria());
+            tipoTramiteUI.setTipoDocumentacionList(tipoTramiteDTO.getTipoDocumentacionList()); // Para agregar un TD al TT
             tipoTramite.add(tipoTramiteUI);
         }
         return tipoTramite;

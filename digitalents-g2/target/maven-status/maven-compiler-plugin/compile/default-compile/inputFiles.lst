@@ -1,63 +1,63 @@
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\ExpertoABMTipoDocumentacion.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\beans\TipoTramiteUI.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\ExpertoABMTipoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\util\Utils.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\ControladorABMTipoDocumentacion.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\beans\UIABMTipoTramiteLista.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\utils\DTOCriterio.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\ControladorABMCategoria.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\dtos\ModificarCategoriaDTOIn.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\model\Filter.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\bean\CarListMB.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\beans\TipoDocumentacionGrillaUI.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\Usuario.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\utils\EjemplosPersistencia.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\model\Car.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\TipoTramiteTipoDocumentacion.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\Tramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\NuevoTipoDocumentacionDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\exceptions\TipoDocumentacionException.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\exceptions\TipoTramiteException.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\beans\CategoriaGrillaUI.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\TipoDocumentacion.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\beans\UIABMTipoDocumentacion.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\AgendaSemanal.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\dtos\CategoriaDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\Entidad.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\TramiteDocumentacion.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\TipoDocumentacionDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\utils\HibernateUtil.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\utils\FachadaInterna.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\utils\FachadaPersistencia.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\dtos\TipoTramiteDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\utils\BeansUtils.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\service\CarService.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\beans\UIABMCategoriaLista.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\Categoria.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\ExpertoABMCategoria.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\EstadoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\Consultor.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\beans\UIABMTipoDocumentacionLista.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\ConfigTipoTramiteEstadoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\ModificarTipoDocumentacionDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\security\LogonMB.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\dtos\NuevoCategoriaDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\TramiteEstado.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\bean\CarFormMB.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\beans\UIABMCategoria.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\dtos\ModificarTipoTramiteDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\TipoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\dtos\ModificarCategoriaDTO.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\ControladorABMTipoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMCategoria\exceptions\CategoriaException.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\ConfigCostoTipoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\beans\UIABMTipoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\TipoTramiteEstadoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\CostoTipoTramite.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\dtos\ModificarTipoTramiteDTOIn.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\model\SortOrder.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\entidades\Cliente.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\converter\EntityConverter.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\ModificarTipoDocumentacionDTOIn.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\Main.java
-C:\Users\Bruno Montero\Desktop\digitalents-g2\src\main\java\ABMTipoTramite\dtos\NuevoTipoTramiteDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\beans\UIABMTipoDocumentacionLista.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\ModificarTipoDocumentacionDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\TipoTramiteEstadoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\beans\UIABMCategoria.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\beans\TipoTramiteUI.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\exceptions\TipoDocumentacionException.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\utils\FachadaPersistencia.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\beans\UIABMTipoDocumentacion.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\utils\HibernateUtil.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\dtos\ModificarCategoriaDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\dtos\NuevoCategoriaDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\dtos\ModificarTipoTramiteDTOIn.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\service\CarService.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\beans\CategoriaGrillaUI.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\Consultor.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\ExpertoABMTipoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\util\Utils.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\ConfigTipoTramiteEstadoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\Entidad.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\utils\FachadaInterna.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\model\Filter.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\model\SortOrder.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\converter\EntityConverter.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\exceptions\CategoriaException.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\ControladorABMTipoDocumentacion.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\ExpertoABMTipoDocumentacion.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\TipoDocumentacionDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\dtos\ModificarCategoriaDTOIn.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\utils\EjemplosPersistencia.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\TipoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\beans\UIABMTipoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\bean\CarFormMB.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\ControladorABMCategoria.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\exceptions\TipoTramiteException.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\ModificarTipoDocumentacionDTOIn.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\Cliente.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\Usuario.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\TipoDocumentacion.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\TipoTramiteTipoDocumentacion.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\dtos\ModificarTipoTramiteDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\bean\CarListMB.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\EstadoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\CostoTipoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\dtos\NuevoTipoTramiteDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\Tramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\infra\security\LogonMB.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\TramiteEstado.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\beans\UIABMTipoTramiteLista.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\ExpertoABMCategoria.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\Main.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\dtos\TipoTramiteDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\AgendaSemanal.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\ConfigCostoTipoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\utils\BeansUtils.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\Categoria.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\dtos\CategoriaDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoTramite\ControladorABMTipoTramite.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\utils\DTOCriterio.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\dtos\NuevoTipoDocumentacionDTO.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\entidades\TramiteDocumentacion.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\com\github\adminfaces\starter\model\Car.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMTipoDocumentacion\beans\TipoDocumentacionGrillaUI.java
+B:\Facultad\3° Año\Diseño de Sistemas\2024 - Implementación 2023\Digitalents\Implementación\GestionDeTramites\digitalents-g2\src\main\java\ABMCategoria\beans\UIABMCategoriaLista.java

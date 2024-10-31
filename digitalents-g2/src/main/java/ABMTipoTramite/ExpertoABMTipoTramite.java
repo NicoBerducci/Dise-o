@@ -5,6 +5,7 @@ import ABMTipoTramite.dtos.ModificarTipoTramiteDTOIn;
 import ABMTipoTramite.dtos.NuevoTipoTramiteDTO;
 import ABMTipoTramite.dtos.TipoTramiteDTO;
 import ABMTipoTramite.exceptions.TipoTramiteException;
+import entidades.TipoDocumentacion;
 import entidades.TipoTramite;
 import entidades.Tramite;
 import java.sql.Timestamp;
@@ -44,14 +45,17 @@ public class ExpertoABMTipoTramite {
             tipoTramiteDTO.setFechaHoraBajaTipoTramite(tipoTramite.getFechaHoraBajaTipoTramite());
             tipoTramiteDTO.setMaxDiasParaDocumentacion(tipoTramite.getMaxDiasParaDocumentacion());
             tipoTramiteDTO.setCategoria(tipoTramite.getCategoria());
-            tipoTramiteDTO.setCategoriaCod(tipoTramite.getCategoriaCod());
-            tipoTramiteDTO.setTipoDocumentacionList(tipoTramite.getTipoDocumentacionList());
+            tipoTramiteDTO.setCategoriaCod(tipoTramite.getCategoriaCod()); // Probar
+            tipoTramiteDTO.setTipoDocumentacionList(tipoTramite.getTipoDocumentacionList()); // Para agregar un TipoDoc al TipoTramite
             tipoTramitesResultado.add(tipoTramiteDTO);
         }
         return tipoTramitesResultado;
     }
 
     public void agregarTipoTramite(NuevoTipoTramiteDTO nuevoTipoTramiteDTO) throws TipoTramiteException {
+        // Para depurar
+        System.out.println("Intentando agregar TipoTramite con cod: " + nuevoTipoTramiteDTO.getCodTipoTramite());
+
         FachadaPersistencia.getInstance().iniciarTransaccion();
 
         List<DTOCriterio> criterioList = new ArrayList<>();
@@ -68,19 +72,19 @@ public class ExpertoABMTipoTramite {
         criterioList.clear();
 
         if (lTipoTramite.size() > 0) {
+            System.out.println("Aca me quedo");
             throw new TipoTramiteException("El cod del Tipo Tramite ya existe");
         } else {
             TipoTramite tipoTramite = new TipoTramite();
+            tipoTramite.setTipoDocumentacionList(nuevoTipoTramiteDTO.getTipoDocumentacionList()); // Para agregar un TipoDoc al TipoTramite
             tipoTramite.setCategoria(nuevoTipoTramiteDTO.getCategoria());
             tipoTramite.setCodTipoTramite(nuevoTipoTramiteDTO.getCodTipoTramite());
             tipoTramite.setDescTipoTramite(nuevoTipoTramiteDTO.getDescTipoTramite());
             tipoTramite.setDescWebTipoTramite(nuevoTipoTramiteDTO.getDescWebTipoTramite());
             tipoTramite.setMaxDiasParaDocumentacion(nuevoTipoTramiteDTO.getMaxDiasParaDocumentacion());
             tipoTramite.setNombreTipoTramite(nuevoTipoTramiteDTO.getNombreTipoTramite());
-            tipoTramite.setTipoDocumentacionList(nuevoTipoTramiteDTO.getTipoDocumentacionList());
 
             FachadaPersistencia.getInstance().guardar(tipoTramite);
-
             FachadaPersistencia.getInstance().finalizarTransaccion();
         }
     }
@@ -131,7 +135,7 @@ public class ExpertoABMTipoTramite {
         tipoTramiteEncontrado.setDescWebTipoTramite(modificarTipoTramiteDTOIn.getDescWebTipoTramite());
         tipoTramiteEncontrado.setMaxDiasParaDocumentacion(modificarTipoTramiteDTOIn.getMaxDiasParaDocumentacion());
         tipoTramiteEncontrado.setNombreTipoTramite(modificarTipoTramiteDTOIn.getNombreTipoTramite());
-        tipoTramiteEncontrado.setTipoDocumentacionList(modificarTipoTramiteDTOIn.getTipoDocumentacionList());
+        tipoTramiteEncontrado.setTipoDocumentacionList(new ArrayList<>(modificarTipoTramiteDTOIn.getTipoDocumentacionList())); // Para reemplazar la lista de TD anterior
 
         FachadaPersistencia.getInstance().guardar(tipoTramiteEncontrado);
         FachadaPersistencia.getInstance().finalizarTransaccion();
@@ -179,6 +183,33 @@ public class ExpertoABMTipoTramite {
         } catch (Exception e) {
             FachadaPersistencia.getInstance().rollbackTransaccion();
             throw new TipoTramiteException("Error al dar de baja TipoTramite: " + e.getMessage());
+        }
+    }
+
+    public void saveSelection(int codTipoTramite, List<TipoDocumentacion> tipoDocumentacionList) throws TipoTramiteException {
+        try {
+            FachadaPersistencia.getInstance().iniciarTransaccion();
+
+            // Criterio para buscar TipoTramite por código
+            List<DTOCriterio> criterioList = new ArrayList<>();
+            DTOCriterio dto = new DTOCriterio();
+            dto.setAtributo("codTipoTramite");
+            dto.setOperacion("=");
+            dto.setValor(codTipoTramite);
+            criterioList.add(dto);
+
+            // Buscar el TipoTramite correspondiente
+            TipoTramite tipoTramiteEncontrado = (TipoTramite) FachadaPersistencia.getInstance().buscar("TipoTramite", criterioList).get(0);
+
+            // Actualizar la lista de TipoDocumentacion
+            tipoTramiteEncontrado.setTipoDocumentacionList(new ArrayList<>(tipoDocumentacionList));
+
+            // Guardar los cambios
+            FachadaPersistencia.getInstance().guardar(tipoTramiteEncontrado);
+            FachadaPersistencia.getInstance().finalizarTransaccion();
+        } catch (Exception e) {
+            FachadaPersistencia.getInstance().rollbackTransaccion();
+            throw new TipoTramiteException("Error al guardar la selección de TipoDocumentacion: " + e.getMessage());
         }
     }
 }

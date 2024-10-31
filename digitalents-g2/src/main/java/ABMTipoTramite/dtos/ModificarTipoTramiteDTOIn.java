@@ -77,7 +77,5 @@ public class ModificarTipoTramiteDTOIn {
 
     public void setCategoriaCod(String categoriaCod) {
         this.categoriaCod = categoriaCod;
-    }
-    
-    
+    }   
 }
