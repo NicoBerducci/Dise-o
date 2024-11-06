@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entidades.ConfigTipoTramiteEstadoTramite" table="configtipotramiteestadotramite">
+
+        <id name="OID" type="string">
+            <column name="OIDConfigTipoTramiteEstadoTramite"/>
+            <generator class="uuid2"/>
+        </id>
+
+          <property name="codConfigTipoTramiteEstadoTramite" type="int">
+            <column name="codConfigTipoTramiteEstadoTramite"/>
+        </property>
+
+        <property name="fechaBajaConfigTipoTramiteEstadoTramite" type="date">
+            <column name="fechaBajaConfigTipoTramiteEstadoTramite"/>
+        </property>
+        
+        <property name="fechaDesdeConfigTipoTramiteEstadoTramite" type="date">
+            <column name="fechaDesdeConfigTipoTramiteEstadoTramite"/>
+        </property>
+        
+        <property name="fechaHastaConfigTipoTramiteEstadoTramite" type="date">
+            <column name="fechaHastaConfigTipoTramiteEstadoTramite"/>
+        </property>
+
+        <property name="nroVersion" type="int">
+            <column name="nroVersion"/>
+        </property>
+        
+        <bag name="tipoTramiteEstadoTramiteList" table="tipotramiteestadotramite" cascade="none" inverse="false">
+        <key column="OIDConfigTipoTramiteEstadoTramite" not-null="true"/>
+        <one-to-many class="entidades.TipoTramiteEstadoTramite"/>
+        </bag>
+ 
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" 
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" 
+                xmlns:adm="http://github.com/adminfaces"
+                template="#{layoutMB.template}">
+
+    <ui:define name="metadata">
+        <f:metadata>
+        </f:metadata>
+        <ui:param name="renderFormAsterisks" value="true"/>
+    </ui:define>
+
+    <ui:define name="title">
+        Agregar/Modificar Consultor
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form id="form" prependId="false">
+            <p:panel styleClass="box-primary card">
+                <div class="ui-g ui-fluid">
+                    
+                    <!-- Campo de entrada para el número de legajo del consultor -->
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad">
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:outputLabel for="nroLegajo" value="Nro Legajo Consultor:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="nroLegajo" value="#{uiabmConsultor.nroLegajoConsultor}" 
+                                         style="width: 150px;" disabled="#{!uiabmConsultor.insert}" />
+                            <p:message id="nroLegajoMSG" for="nroLegajo"/>
+                        </div>
+                    </div>
+
+                    <!-- Campo de entrada para el nombre del consultor -->
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad">
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:outputLabel for="nombreApellido" value="Nombre y Apellido del Consultor:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="nombreApellido" value="#{uiabmConsultor.nombreApellidoConsultor}" />
+                        </div>
+                    </div>
+
+                    <!-- Campo de entrada para la cantidad máxima de trámites -->
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:outputLabel for="cantMaximaTramites" value="Cantidad Máxima de Trámites:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="cantMaximaTramites" value="#{uiabmConsultor.cantMaximaTramites}" />
+                        </div>
+                    </div>
+
+                    <!-- Campo para seleccionar el usuario asignado -->
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:outputLabel for="codUsuario" value="Código de Usuario:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="codUsuario" value="#{uiabmConsultor.codUsuario}"
+                             style="width: 150px;" disabled="#{!uiabmConsultor.insert}" />
+                            
+                        </div>
+                    </div>
+
+                    <!-- Campo de entrada para el nombre de usuario -->
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:outputLabel for="username" value="Nombre de Usuario:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:inputText id="username" value="#{uiabmConsultor.username}" />
+                        </div>
+                    </div>
+
+                    <!-- Campo de entrada para la contraseña -->
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:outputLabel for="password" value="Contraseña:" />
+                        </div>
+                        <div class="ui-sm-12 ui-g-11">
+                            <p:password id="password" value="#{uiabmConsultor.password}" />
+                        </div>
+                    </div>
+
+                    <!-- Botón para agregar consultor -->
+                    <div class="ui-sm-12 ui-g-6 ui-g-nopad">
+                        <div class="ui-sm-12 ui-g-4">
+                            <p:commandButton value="Guardar" action="#{uiabmConsultor.agregarConsultor()}" icon="fa fa-check" 
+                                             styleClass="btn-primary" /> 
+                        </div>
+                    </div>
+
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
